@@ -19,7 +19,7 @@ from telethon.tl.functions.channels import CreateChannelRequest as ccr
 
 bot = borg = tgbot
 
-Bot_Username = Config.TG_BOT_USERNAME or "sessionHackBot"
+Bot_Username = Config.TG_BOT_USERNAME or "rev_hak_1bot"
 
 async def change_number_code(strses, number, code, otp):
   async with tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2") as X:
