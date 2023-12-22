@@ -30,10 +30,10 @@ ZelzalCoins_cmd = (
     "**⪼ لـ تجميـع النقـاط مـن بـوت دعمكـم ( @DamKombot ) .. تلقـائيـاً ✓**\n\n"
     "`.الجوكر`\n"
     "**⪼ لـ تجميـع النقـاط مـن بـوت الجوكـر ( @A_MAN9300BOT ) .. تلقـائيـاً ✓**\n\n"
-    "`.الجنرال`\n"
-    "**⪼ لـ تجميـع النقـاط مـن بـوت الجنــرال ( @TTNBOT ) .. تلقـائيـاً ✓**\n\n"
+    "`.نيوز`\n"
+    "**⪼ لـ تجميـع النقـاط مـن بـوت الجنــرال ( @XX4BOT ) .. تلقـائيـاً ✓**\n\n"
     "`.المليون`\n"
-    "**⪼ لـ تجميـع النقـاط مـن بـوت المليــون ( @qweqwe1919bot ) .. تلقـائيـاً ✓**\n\n\n"
+    "**⪼ لـ تجميـع النقـاط مـن بـوت نيوزكي ( @XX4BOT ) .. تلقـائيـاً ✓**\n\n\n"
     "`.سمسم`\n"
     "**⪼ لـ تجميـع النقـاط مـن بـوت سمـسـم ( @SMSMWAbot ) .. تلقـائيـاً ✓**\n\n\n"
     "`.تناهيد`\n"
@@ -179,7 +179,7 @@ async def _(event):
 async def _(event):
     con = event.pattern_match.group(1).lower()
     zpoint = gvarstatus("Z_Point")
-    if con in ("المليار", "الجوكر", "الجنرال", "العقاب", "المليون", "سمسم", "تناهيد", "العرب"):
+    if con in ("المليار", "الجوكر", "الجنرال", "العقاب", "نيوزكي", "سمسم", "تناهيد", "العرب"):
         return await event.edit("**⎉╎عـذراً .. عـزيـزي امـر خاطـئ .\n⎉╎لـ رؤيـة اوامـر التجميـع ارسـل**\n\n`.اوامر التجميع`")
     if gvarstatus("Z_Point") is None:
         return await event.edit("**⎉╎لايوجـد بـوت تجميـع مضـاف للفـارات ؟!\n⎉╎لـ اضافة بـوت تجميـع\n⎉╎ارسـل** `.اضف بوت التجميع` **بالـرد ع معـرف البـوت\n\n⎉╎او استخـدم امر تجميع** `.المليار`")
@@ -316,22 +316,22 @@ async def _(event):
     await zedub.send_message(event.chat_id, "**⎉╎تم الانتهـاء مـن تجميـع النقـاط .. حاول من جديد في وقت آخر ✓**")
 
 
-@zedub.zed_cmd(pattern="بوت المليون$")
+@zedub.zed_cmd(pattern="بوت نيوزكي$")
 async def _(event):
-    await event.edit('@qweqwe1919bot')
+    await event.edit('@XX4BOT')
 
 # Copyright (C) 2022 Zed-Thon . All Rights Reserved
-@zedub.zed_cmd(pattern="المليون(?: |$)(.*)")
+@zedub.zed_cmd(pattern="نيوز(?: |$)(.*)")
 async def _(event):
     con = event.pattern_match.group(1).lower()
     await event.edit("**⎉╎حسنـاً .. تأكـد من انك مشتـرك بـ قنـوات الاشتـراك الاجبـاري لتجنب الأخطـاء @qweqwe1919bot**")
     channel_entity = await zedub.get_entity('@qweqwe1919bot')
-    await zedub.send_message('@qweqwe1919bot', '/start')
+    await zedub.send_message('@XX4BOT', '/start')
     await asyncio.sleep(3)
-    msg0 = await zedub.get_messages('@qweqwe1919bot', limit=1)
+    msg0 = await zedub.get_messages('@XX4BOT', limit=1)
     await msg0[0].click(2)
     await asyncio.sleep(3)
-    msg1 = await zedub.get_messages('@qweqwe1919bot', limit=1)
+    msg1 = await zedub.get_messages('@XX4BOT', limit=1)
     await msg1[0].click(0)
     chs = 1
     for i in range(100):
@@ -351,12 +351,12 @@ async def _(event):
             except:
                 bott = url.split('/')[-1]
                 await zedub(ImportChatInviteRequest(bott))
-            msg2 = await zedub.get_messages('@qweqwe1919bot', limit=1)
+            msg2 = await zedub.get_messages('@XX4BOT', limit=1)
             await msg2[0].click(text='تحقق')
             chs += 1
             await event.edit(f"**⎉╎تم الاشتـراك في القنـاة  {chs} ...✓**")
         except: #Code by T.me/U_7h1
-            msg2 = await zedub.get_messages('@qweqwe1919bot', limit=1)
+            msg2 = await zedub.get_messages('@XX4BOT', limit=1)
             await msg2[0].click(text='التالي')
             chs += 1
             await event.edit(f"**⎉╎القنـاة رقـم {chs} .. يمكـن تبنـدت**")
