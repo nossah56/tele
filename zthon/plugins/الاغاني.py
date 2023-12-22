@@ -53,7 +53,7 @@ async def song(event):
         query = reply.message
     else:
         return await edit_or_reply(event, "**⎉╎قم باضافـة الاغنيـه للامـر .. بحث + اسـم الاغنيـه**")
-    zed = base64.b64decode("VHdIUHd6RlpkYkNJR1duTg==")
+    zed = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
     zedevent = await edit_or_reply(event, "**╮ جـارِ البحث ؏ـن الاغنيـٓه... 🎧♥️╰**")
     video_link = await yt_search(str(query))
     if not url(video_link):
@@ -97,7 +97,7 @@ async def vsong(event):
         query = reply.message
     else:
         return await edit_or_reply(event, "**⎉╎قم باضافـة الاغنيـه للامـر .. فيديو + اسـم الفيديـو**")
-    zed = base64.b64decode("VHdIUHd6RlpkYkNJR1duTg==")
+    zed = base64.b64decode("QUFBQUFGRV9vWjVYVE5fUnVaaEtOdw==")
     zedevent = await edit_or_reply(event, "**╮ جـارِ البحث ؏ـن الفيديـو... 🎧♥️╰**")
     video_link = await yt_search(str(query))
     if not url(video_link):
