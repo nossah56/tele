@@ -9,7 +9,7 @@ from .core.session import zedub
 from .utils import mybot, saves
 from .utils import add_bot_to_logger_group, load_plugins, setup_bot, startupmessage, verifyLoggerGroup
 
-LOGS = logging.getLogger("𝑺𝑶𝑼𝑹𝑪𝑬 𝑯𝑼𝑵𝑻𝑬𝑹")
+LOGS = logging.getLogger("سورس هانتر")
 cmdhr = Config.COMMAND_HAND_LER
 
 print(zthon.__copyright__)
