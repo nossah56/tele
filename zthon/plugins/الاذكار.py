@@ -12,7 +12,7 @@ from ..core.managers import edit_or_reply
 plugin_category = "extra" 
 
 #by ~ @lMl10l
-@l313l.ar_cmd(
+@zedub.zed_cmd(
     pattern="اذكار الصباح",
     command=("اذكار الصباح", plugin_category),)
 async def _(event):
@@ -20,7 +20,7 @@ async def _(event):
            roze = random.choice(razan)
            return await event.edit(f"{roze}")
 #by ~ @lMl10l
-@l313l.ar_cmd(
+@zedub.zed_cmd(
     pattern="اذكار المساء$",
     command=("اذكار المساء", plugin_category),)
 async def _(event):
@@ -29,7 +29,7 @@ async def _(event):
            return await event.edit(f"{ror}")
             
 #by ~ @RR 9R7
-@l313l.ar_cmd(
+@zedub.zed_cmd(
     pattern="احاديث$",
     command=("احاديث", plugin_category),)
 async def _(event):
@@ -37,7 +37,7 @@ async def _(event):
            me = random.choice(roza)
            return await event.edit(f"{me}")
 
-@l313l.ar_cmd(
+@zedub.zed_cmd(
     pattern="اذكار الاستيقاظ$",
     command=("اذكار الاستيقاظ", plugin_category),)
 async def _(event):
@@ -45,7 +45,7 @@ async def _(event):
            az = random.choice(rozan)
            return await event.edit(f"{az}")
                      
-@l313l.ar_cmd(
+@zedub.zed_cmd(
     pattern="اذكار النوم$",
     command=("اذكار النوم", plugin_category),)
 async def _(event):
@@ -53,7 +53,7 @@ async def _(event):
            rr = random.choice(rozmuh)
            return await event.edit(f"{rr}")
            
-@l313l.ar_cmd(
+@zedub.zed_cmd(
     pattern="اذكار الصلاة$",
     command=("اذكار الصلاة", plugin_category),)
 async def _(event):
@@ -62,7 +62,7 @@ async def _(event):
            return await event.edit(f"{rm}")
 
 
-@l313l.ar_cmd(
+@zedub.zed_cmd(
     pattern="اوامر الاذكار$",
     command=("اوامر الاذكار", plugin_category),)
 async def _(event):
