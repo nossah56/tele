@@ -2,7 +2,7 @@ import random
 from telethon import events
 import random, re
 
-from zthon.utils import admin_cmd
+from JoKeRUB.utils import admin_cmd
 
 import asyncio
 from zthon import l313l
