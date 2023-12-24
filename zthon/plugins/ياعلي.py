@@ -1,4 +1,4 @@
-from JoKeRUB import l313l, bot
+from zthon import zthon, bot
 import time
 from zthon import BOTLOG_CHATID
 from ..sql_helper.globals import addgvar, delgvar, gvarstatus
