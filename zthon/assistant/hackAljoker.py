@@ -1,5 +1,5 @@
 
-from zthon import bot, l313l
+from zthon import bot, zthon
 #By Source joker @huntersourcech
 from telethon import events, functions, types, Button
 from datetime import timedelta
