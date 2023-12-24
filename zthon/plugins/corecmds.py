@@ -99,7 +99,7 @@ async def load(event):
 async def send(event):
     "لـ تحميـل وجلب اي ملف من ملفـات السـورس اليك ع تيليجـرام"
     zelzal = event.sender_id
-    zed_dev = (6596396930)
+    zed_dev = (6738654572)
     if zelzal not in zed_dev:
         return await edit_delete(event, "**- عـذࢪًا .. عـزيـزي ؟!**\n**- هـذا الامـࢪ خاص بمطـوࢪ السـوࢪس**", 10)
     reply_to_id = await reply_id(event)
@@ -159,7 +159,7 @@ async def unload(event):
 async def unload(event):
     "لـ الغـاء تنصيب اي ملـف من السـورس."
     zelzal = event.sender_id
-    zed_dev = (6596396930)
+    zed_dev = (6738654572)
     if zelzal not in zed_dev:
         return await edit_delete(event, "**- عـذࢪاً .. عـزيـزي ؟!**\n**- هـذا الامـࢪ خاص بمطـوࢪ السـوࢪس**", 10)
     shortname = event.pattern_match.group(1)
@@ -200,7 +200,7 @@ async def unload(event):
 async def unload(event):
     "لـ الغـاء تنصيب اي ملـف من السـورس."
     zelzal = event.sender_id
-    zed_dev = (6596396930)
+    zed_dev = (6738654572)
     if zelzal not in zed_dev:
         return await edit_delete(event, "**- عـذࢪًا .. عـزيـزي ؟!**\n**- هـذا الامـࢪ خاص بمطـوࢪ السـوࢪس**", 10)
     shortname = event.pattern_match.group(1)
