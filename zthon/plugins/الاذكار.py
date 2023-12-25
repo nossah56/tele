@@ -5,8 +5,8 @@ import random, re
 from zthon.utils import admin_cmd
 
 import asyncio
-from zthon import l313l
-from l313l.razan._islam import *
+from zthon import JepIQ
+from JepIQ.razan._islam import *
 from ..core.managers import edit_or_reply
 
 plugin_category = "extra" 
